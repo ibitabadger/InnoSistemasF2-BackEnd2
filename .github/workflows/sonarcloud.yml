@@ -35,4 +35,10 @@ jobs:
         with:
           projectBaseDir: .
         env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+              -Dsonar.organization=ibitabadger
+              -Dsonar.projectKey=InnoSistemasF2-BackEnd2
+              -Dsonar.python.coverage.reportPaths=coverage.xml
