@@ -27,6 +27,8 @@
 		<url/>
 	</scm>
 	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -117,6 +119,14 @@
 					<nonFilteredFileExtensions>
 					<nonFilteredFileExtension>properties</nonFilteredFileExtension>
 					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<release>17</release>
 				</configuration>
 			</plugin>
 			<plugin>
