@@ -28,10 +28,20 @@
 	</scm>
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    	<maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.organization>ibitabadger</sonar.organization>
+		<sonar.projectKey>ibitabadger_InnoSistemasF2-BackEnd2</sonar.projectKey>
 	</properties>
+
 	<dependencies>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.13</version>
+		</dependency>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -112,6 +122,30 @@
 	<build>
 		<plugins>
 			<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.7</version>
+			<executions>
+				<execution>
+				<id>prepare-agent</id>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+				</execution>
+				<execution>
+				<id>report</id>
+				<goals>
+					<goal>report</goal>
+				</goals>
+				<configuration>
+					<formats>
+					<format>XML</format>
+					</formats>
+				</configuration>
+				</execution>
+			</executions>
+			</plugin>
+			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.3.1</version>
 				<configuration>
@@ -120,6 +154,11 @@
 					<nonFilteredFileExtension>properties</nonFilteredFileExtension>
 					</nonFilteredFileExtensions>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>4.0.0.4121</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
