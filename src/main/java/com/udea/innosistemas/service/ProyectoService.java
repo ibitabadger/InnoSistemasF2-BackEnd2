@@ -1,5 +1,13 @@
 package com.udea.innosistemas.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.udea.innosistemas.exception.ResourceNotFoundException;
 import com.udea.innosistemas.model.dto.CrearProyectoRequest;
 import com.udea.innosistemas.model.dto.ProyectoDto;
@@ -11,15 +19,13 @@ import com.udea.innosistemas.repository.EquipoRepository;
 import com.udea.innosistemas.repository.MiembroEquipoRepository;
 import com.udea.innosistemas.repository.ProyectoRepository;
 import com.udea.innosistemas.repository.UsuarioRepository;
+
+import lombok.Builder;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-
+@Data
+@Builder
 @Service
 @RequiredArgsConstructor
 public class ProyectoService {
