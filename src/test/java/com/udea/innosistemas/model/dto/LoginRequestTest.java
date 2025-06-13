@@ -8,7 +8,7 @@ import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
 
-public class LoginRequestTest {
+class LoginRequestTest {
 
     private static Validator validator;
 

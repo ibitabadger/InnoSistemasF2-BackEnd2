@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import com.udea.innosistemas.model.enums.RolEquipo;
 
-public class AgregarMiembroRequestTest {
+class AgregarMiembroRequestTest {
 
     @Test
     void getEmail() {
