@@ -72,7 +72,7 @@ public class AuthService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        // Obtener usuario autenticado
+        // Obtener usuario autenticadoo
         Usuario usuario = (Usuario) authentication.getPrincipal();
 
         // Actualizar último acceso
