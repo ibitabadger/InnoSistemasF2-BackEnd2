@@ -63,7 +63,7 @@ public class AuthService {
     }
 
     public LoginResponse autenticarUsuario(LoginRequest request) {
-        // Autenticar usuario
+        // Autenticar usuario.
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
