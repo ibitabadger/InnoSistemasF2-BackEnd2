@@ -1,12 +1,7 @@
 package com.udea.innosistemas.service;
 
-import com.udea.innosistemas.model.dto.LoginRequest;
-import com.udea.innosistemas.model.dto.LoginResponse;
-import com.udea.innosistemas.model.dto.RegistroRequest;
-import com.udea.innosistemas.model.dto.UsuarioDto;
-import com.udea.innosistemas.model.entity.Usuario;
-import com.udea.innosistemas.repository.UsuarioRepository;
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDateTime;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -14,7 +9,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import com.udea.innosistemas.model.dto.LoginRequest;
+import com.udea.innosistemas.model.dto.LoginResponse;
+import com.udea.innosistemas.model.dto.RegistroRequest;
+import com.udea.innosistemas.model.dto.UsuarioDto;
+import com.udea.innosistemas.model.entity.Usuario;
+import com.udea.innosistemas.repository.UsuarioRepository;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -63,7 +65,7 @@ public class AuthService {
     }
 
     public LoginResponse autenticarUsuario(LoginRequest request) {
-        // Autenticar usuario.
+        // Autenticar usuario
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
